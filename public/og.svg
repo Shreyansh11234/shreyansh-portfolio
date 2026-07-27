@@ -1,0 +1,8 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050816"/>
+  <circle cx="900" cy="150" r="180" fill="#875BFF" fill-opacity="0.15"/>
+  <circle cx="280" cy="480" r="250" fill="#5C93FF" fill-opacity="0.18"/>
+  <text x="80" y="205" fill="white" font-family="Inter, Arial" font-size="54" font-weight="700">Shreyansh Kumar Rao</text>
+  <text x="80" y="270" fill="rgba(255,255,255,0.75)" font-family="Inter, Arial" font-size="28">Robotics • Research • Cosmos</text>
+  <text x="80" y="338" fill="rgba(255,255,255,0.5)" font-family="Inter, Arial" font-size="22">Class XI • JEE Aspirant • Top 4 Globally at Technoxian</text>
+</svg>
