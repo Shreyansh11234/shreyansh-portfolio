@@ -28,15 +28,13 @@ export function ContactSection() {
 
     setMailDraftUrl(mailtoUrl);
     setSubmitted(true);
-    
+
     if (navigator.clipboard) {
       navigator.clipboard
         .writeText(bodyText)
         .then(() => setCopied(true))
         .catch(() => setCopied(false));
     }
-    
-    window.location.href = mailtoUrl;
   };
 
   if (submitted) {
@@ -72,6 +70,14 @@ export function ContactSection() {
               </button>
               <a
                 href={mailDraftUrl || `mailto:${site.email}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                onClick={(e) => {
+                  const url = mailDraftUrl || `mailto:${site.email}`;
+                  if (!url) return;
+                  // Fallback for environments where mailto is blocked or not opened automatically.
+                  window.location.href = url;
+                }}
                 className="h-11 px-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black text-sm font-semibold hover:translate-y-[-1px] hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300"
               >
                 Open Email App
