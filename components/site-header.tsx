@@ -5,8 +5,6 @@ import { Menu, Command } from "lucide-react";
 import { useState } from "react";
 import { site } from "@/lib/site";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
-
 export function SiteHeader({
   onOpenPalette
 }: {
@@ -36,7 +34,6 @@ export function SiteHeader({
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <Button variant="secondary" size="sm" onClick={onOpenPalette} className="hidden sm:inline-flex">
             <Command className="h-4 w-4" />
             Ctrl K

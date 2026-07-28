@@ -36,13 +36,6 @@ export function AchievementsTimeline() {
                     <Badge>{item.award}</Badge>
                   </div>
                   <p className="text-sm leading-7 text-white/62">{item.impact}</p>
-                  <div className="grid grid-cols-3 gap-3">
-                    {["Photo", "Certificate", "Media"].map((label) => (
-                      <div key={label} className="rounded-2xl border border-dashed border-white/12 bg-white/[0.02] p-4 text-center text-xs text-white/35">
-                        {label} placeholder
-                      </div>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             </div>

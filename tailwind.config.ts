@@ -22,6 +22,11 @@ const config: Config = {
           glow: "hsl(var(--accent-glow))"
         }
       },
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        space: ["var(--font-space)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"]
+      },
       boxShadow: {
         glow: "0 0 0 1px hsl(var(--line)), 0 10px 40px rgba(0,0,0,.35), 0 0 60px rgba(67,126,255,.12)",
         soft: "0 12px 40px rgba(0,0,0,.28)"
@@ -38,8 +43,8 @@ const config: Config = {
           "50%": { transform: "translate3d(0,-14px,0)" }
         },
         glow: {
-          "0%,100%": { opacity: 0.45 },
-          "50%": { opacity: 0.8 }
+          "0%,100%": { opacity: "0.45" },
+          "50%": { opacity: "0.8" }
         },
         drift: {
           "0%": { transform: "translateX(0)" },

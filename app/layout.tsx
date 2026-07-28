@@ -3,7 +3,6 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { site } from "@/lib/site";
-import { LoadingScreen } from "@/components/loading-screen";
 import { CustomCursor } from "@/components/custom-cursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -37,7 +36,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${space.variable} ${mono.variable} font-sans antialiased`}>
         <Providers>
-          <LoadingScreen />
           <CustomCursor />
           {children}
         </Providers>

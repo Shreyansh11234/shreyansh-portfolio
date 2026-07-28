@@ -7,7 +7,6 @@ import { AboutStory } from "@/components/about-story";
 import { AchievementsTimeline } from "@/components/achievements-timeline";
 import { BeyondEngineering } from "@/components/beyond-engineering";
 import { ETHResearch } from "@/components/eth-research";
-import { ProjectsGrid } from "@/components/projects-grid";
 import { RoboticsShowcase } from "@/components/robotics-showcase";
 import { SkillsGrid } from "@/components/skills-grid";
 import { ExperienceTimeline } from "@/components/experience-timeline";
@@ -44,7 +43,6 @@ export function HomeShell() {
       <AchievementsTimeline />
       <BeyondEngineering />
       <ETHResearch />
-      <ProjectsGrid />
       <RoboticsShowcase />
       <SkillsGrid />
       <ExperienceTimeline />

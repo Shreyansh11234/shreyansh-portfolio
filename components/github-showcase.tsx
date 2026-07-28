@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,6 +29,11 @@ export function GitHubShowcase() {
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME ?? "Shreyansh11234";
   const [user, setUser] = useState<GitHubUser | null>(null);
   const [repos, setRepos] = useState<Repo[]>([]);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const load = async () => {
@@ -56,9 +62,11 @@ export function GitHubShowcase() {
         <Card>
           <CardContent className="p-6">
             <div className="flex items-center gap-4">
-              <img
+              <Image
                 src={user?.avatar_url ?? `https://avatars.githubusercontent.com/${username}`}
                 alt="GitHub avatar"
+                width={64}
+                height={64}
                 className="h-16 w-16 rounded-3xl border border-white/10 object-cover"
               />
               <div>
@@ -94,7 +102,7 @@ export function GitHubShowcase() {
                   <span
                     key={i}
                     className="aspect-square rounded-[6px] border border-white/8"
-                    style={{ backgroundColor: `rgba(123, 166, 255, ${0.12 + v * 0.55})` }}
+                    style={mounted ? { backgroundColor: `rgba(123, 166, 255, ${(0.12 + v * 0.55).toFixed(3)})` } : undefined}
                   />
                 ))}
               </div>
@@ -112,7 +120,7 @@ export function GitHubShowcase() {
                     <h3 className="font-semibold text-white">{repo.name}</h3>
                   </div>
                   <p className="mt-2 text-sm text-white/55">
-                    {repo.language ?? "Code"} • updated {new Date(repo.updated_at).toLocaleDateString()}
+                    {repo.language ?? "Code"} - updated {new Date(repo.updated_at).toLocaleDateString()}
                   </p>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-white/65">

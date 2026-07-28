@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Beaker, Sigma, BookOpenCheck, Timeline } from "lucide-react";
+import { ArrowRight, Beaker, Sigma, BookOpenCheck, Clock } from "lucide-react";
 
 const items = [
   { title: "Research Overview", text: "Original investigation into the nature of time through mathematical reasoning and physics literature review." },
@@ -42,7 +42,7 @@ export function ETHResearch() {
                 <p className="text-xs uppercase tracking-[0.4em] text-white/35">Research Lab</p>
                 <h3 className="mt-2 text-2xl font-semibold text-white">ETH Progress Map</h3>
               </div>
-              <Timeline className="h-5 w-5 text-[#86abff]" />
+              <Clock className="h-5 w-5 text-[#ffa850]" />
             </div>
 
             <div className="mt-6 space-y-4">
@@ -72,7 +72,7 @@ export function ETHResearch() {
               </p>
             </div>
 
-            <Link href="/research" className="mt-6 inline-flex items-center gap-2 text-sm text-[#91b2ff]">
+            <Link href="/research" className="mt-6 inline-flex items-center gap-2 text-sm text-[#ff9d47]">
               Open full research page <ArrowRight className="h-4 w-4" />
             </Link>
           </CardContent>
