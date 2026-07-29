@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['three'],   // ← add this line
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
@@ -8,5 +9,4 @@ const nextConfig = {
     ]
   }
 };
-
 export default nextConfig;
