@@ -168,6 +168,10 @@ export function ContactSection() {
             >
               <input type="hidden" name="to_name" value={site.name} />
               <input type="hidden" name="from_name" value={name} />
+              <input type="hidden" name="name" value={name} />
+              <input type="hidden" name="email" value={email} />
+              <input type="hidden" name="reply_to" value={email} />
+              <input type="hidden" name="title" value="Portfolio Contact Inquiry" />
 
               <div>
                 <label htmlFor="contact-name" className="block text-xs uppercase tracking-[0.25em] text-white/45 mb-2 font-mono">
