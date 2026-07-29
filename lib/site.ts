@@ -18,6 +18,7 @@ export const site = {
     { label: "Beyond Engineering", href: "#beyond-engineering" },
     { label: "ETH", href: "#eth" },
     { label: "Robotics", href: "#robotics" },
+    { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
     { label: "GitHub", href: "#github" },
     { label: "Contact", href: "#contact" }

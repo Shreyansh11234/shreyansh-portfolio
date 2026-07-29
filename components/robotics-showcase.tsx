@@ -14,7 +14,9 @@ export function RoboticsShowcase() {
       <Badge className="mb-4">Robotics</Badge>
       <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Robotics as a competition identity.</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            Robotics as a competition identity.<span className="terminal-cursor" />
+          </h2>
           <p className="mt-5 text-sm leading-7 text-white/65">
             This section should feel like a professional engineering showcase rather than a gallery of trophies.
           </p>

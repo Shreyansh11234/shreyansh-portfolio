@@ -27,7 +27,7 @@ export function ExperienceTimeline() {
         {experiences.map((item) => (
           <Card key={item.title}>
             <CardContent className="p-5">
-              <p className="text-xs uppercase tracking-[0.35em] text-white/35">{item.period}</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-[#4fd1ff]/60 font-mono">{item.period}</p>
               <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
               <p className="mt-2 text-sm leading-7 text-white/60">{item.text}</p>
             </CardContent>

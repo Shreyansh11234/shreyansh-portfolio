@@ -1,80 +1,129 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
-import { CosmicCodeScene } from "@/components/cosmic-code-scene";
+import { Hero3DScene } from "@/components/hero-3d-scene";
 import { TypingHeadline } from "@/components/typing-headline";
 
 export function Hero() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted) return <div className="h-screen" />;
+
   return (
-    <section id="home" className="relative overflow-hidden pt-16 sm:pt-20">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(143,176,255,0.18),transparent_30%),radial-gradient(circle_at_78%_24%,rgba(255,165,80,0.14),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.055),transparent)]" />
-      <div className="absolute inset-0 -z-10 bg-[url('/nebula.svg')] bg-cover bg-center opacity-35 mix-blend-screen" />
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8 lg:pb-24">
-        <div className="relative z-20 flex flex-col justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6 flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/55 backdrop-blur-xl"
-          >
-            Cosmic code lab
-          </motion.div>
+    <section
+      id="home"
+      className="relative h-screen w-full overflow-hidden"
+      style={{ background: "#05070d" }}
+    >
+      {/* Full-bleed 3D scene */}
+      <Hero3DScene />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl"
-          >
-            <span className="block text-white/70">Shreyansh Kumar Rao</span>
+      {/* Eyebrow */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none">
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-mono text-[13px] tracking-[0.15em] uppercase text-[#4fd1ff] mb-[18px]"
+        >
+          robotics · ai · physics · code
+        </motion.p>
+
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center text-[clamp(32px,6vw,64px)] font-bold leading-[1.1] text-[#f4f6fb]"
+        >
+          Hi, I&apos;m <span className="bg-gradient-to-r from-[#4fd1ff] to-[#ffb454] bg-clip-text text-transparent">Shreyansh</span>
+          <span className="block text-[clamp(20px,3.5vw,40px)] font-semibold text-white/70">
             <TypingHeadline />
-          </motion.h1>
+          </span>
+        </motion.h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-white/66 sm:text-lg">
-            Class XI student, JEE aspirant, robotics competitor, AI builder, and independent physics researcher
-            building where software, machines, and the universe meet.
-          </p>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-4 max-w-[480px] text-center text-base text-[#8a93a8] px-4"
+        >
+          Building at the intersection of intelligent systems and the physical world.
+        </motion.p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#eth"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-black transition hover:translate-y-[-1px] hover:shadow-[0_0_35px_rgba(80,140,255,.22)]"
-            >
-              View Research
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="/resume/Shreyansh_Portfolio_v2.docx"
-              download
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-5 text-sm font-medium text-white transition hover:bg-white/[0.08]"
-            >
-              Download Resume
-              <Download className="h-4 w-4" />
-            </a>
-          </div>
-
-          <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-            {[
-              ["Top 4", "Globally at Technoxian"],
-              ["MANAK", "National recognition"],
-              ["ETH", "Active research"],
-              ["Next.js", "Production builds"]
-            ].map(([a, b]) => (
-              <motion.div
-                key={a}
-                whileHover={{ y: -4 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl"
-              >
-                <p className="text-2xl font-semibold text-white">{a}</p>
-                <p className="mt-1 text-xs leading-5 text-white/55">{b}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <CosmicCodeScene />
+        {/* CTA Buttons — only on desktop */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-3 pointer-events-auto"
+        >
+          <a
+            href="#eth"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-black transition hover:translate-y-[-1px] hover:shadow-[0_0_35px_rgba(79,209,255,.25)]"
+          >
+            View Research
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a
+            href="/resume/Shreyansh_Portfolio_v2.docx"
+            download
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 text-sm font-medium text-white/80 transition hover:bg-white/10"
+          >
+            Download Resume
+            <Download className="h-4 w-4" />
+          </a>
+        </motion.div>
       </div>
+
+      {/* Stats grid — bottom area */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+        className="absolute bottom-24 left-1/2 z-20 -translate-x-1/2 hidden md:block"
+      >
+        <div className="flex gap-4">
+          {[
+            ["Top 4", "Globally at Technoxian"],
+            ["MANAK", "National recognition"],
+            ["ETH", "Active research"],
+            ["Next.js", "Production builds"]
+          ].map(([a, b]) => (
+            <div
+              key={a}
+              className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 backdrop-blur-xl"
+            >
+              <p className="text-xl font-semibold text-white">{a}</p>
+              <p className="mt-0.5 text-xs leading-5 text-white/55">{b}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Scroll cue */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 font-mono text-xs tracking-[0.1em] text-[#5c6478] animate-bob"
+      >
+        scroll to explore ↓
+      </motion.p>
+
+      <style>{`
+        @keyframes bob {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(6px); }
+        }
+        .animate-bob {
+          animation: bob 2s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }

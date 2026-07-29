@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { StarfieldBackground } from "@/components/starfield-background";
 import { site } from "@/lib/site";
-import { CustomCursor } from "@/components/custom-cursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${space.variable} ${mono.variable} font-sans antialiased`}>
         <Providers>
-          <CustomCursor />
+          <StarfieldBackground />
           {children}
         </Providers>
       </body>

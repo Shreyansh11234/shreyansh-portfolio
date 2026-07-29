@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Beaker, Sigma, BookOpenCheck, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 
 const items = [
   { title: "Research Overview", text: "Original investigation into the nature of time through mathematical reasoning and physics literature review." },
@@ -17,7 +17,9 @@ export function ETHResearch() {
       <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr]">
         <div className="space-y-6">
           <Badge>Emergent Time Hypothesis</Badge>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">A research-grade section for an original theory.</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            A research-grade section for an original theory.<span className="terminal-cursor" />
+          </h2>
           <p className="max-w-2xl text-sm leading-7 text-white/65">
             The portfolio should treat ETH like a real investigation: evolving notes, milestones, mathematical development,
             and a publication path that respects scientific discipline.
@@ -39,10 +41,10 @@ export function ETHResearch() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-white/35">Research Lab</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-[#4fd1ff]/50 font-mono">Research Lab</p>
                 <h3 className="mt-2 text-2xl font-semibold text-white">ETH Progress Map</h3>
               </div>
-              <Clock className="h-5 w-5 text-[#ffa850]" />
+              <Clock className="h-5 w-5 text-[#ffb454]" />
             </div>
 
             <div className="mt-6 space-y-4">
@@ -54,10 +56,10 @@ export function ETHResearch() {
                 ["Peer Review Prep", "Future stage"]
               ].map(([a, b], index) => (
                 <div key={a} className="flex items-center gap-4">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sm text-white/70">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#4fd1ff]/10 bg-[#4fd1ff]/8 text-sm text-[#4fd1ff]/70">
                     {index + 1}
                   </div>
-                  <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                  <div className="flex-1 rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3">
                     <p className="text-sm font-medium text-white">{a}</p>
                     <p className="text-xs text-white/45">{b}</p>
                   </div>
@@ -65,14 +67,14 @@ export function ETHResearch() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-3xl border border-dashed border-white/12 bg-white/[0.03] p-5">
+            <div className="mt-6 rounded-3xl border border-dashed border-[#4fd1ff]/10 bg-white/[0.02] p-5">
               <p className="text-sm font-medium text-white">Research notes</p>
               <p className="mt-2 text-sm leading-7 text-white/60">
                 Keep a written record of observations, equations, diagrams, open questions, and revisions.
               </p>
             </div>
 
-            <Link href="/research" className="mt-6 inline-flex items-center gap-2 text-sm text-[#ff9d47]">
+            <Link href="/research" className="mt-6 inline-flex items-center gap-2 text-sm text-[#ffb454] hover:text-[#ffc877]">
               Open full research page <ArrowRight className="h-4 w-4" />
             </Link>
           </CardContent>

@@ -1,57 +1,54 @@
 export type Project = {
-  name: string;
-  type: string;
-  problem: string;
-  solution: string;
-  outcome: string;
-  stack: string[];
-  github?: string;
-  live?: string;
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  demo?: string;
 };
 
 export const projects: Project[] = [
   {
-    name: "Emergent Time Hypothesis",
-    type: "Research Initiative",
-    problem:
-      "Modern explanations of time still leave open questions about origin, emergence, and mathematical structure.",
-    solution:
-      "A self-initiated research paper that develops reasoning, equations, and a disciplined framework around time and dimensions.",
-    outcome:
-      "Positions the work as a genuine scientific exploration with a publication-minded workflow.",
-    stack: ["Physics", "Mathematics", "Research Writing", "LaTeX"]
+    title: "Emergent Time Hypothesis",
+    description:
+      "A self-initiated physics research paper exploring the nature of time, dimensions, and mathematical structure. Original reasoning with a publication-minded workflow.",
+    tech: ["Physics", "Mathematics", "Research Writing", "LaTeX"],
+    github: "https://github.com/Shreyansh11234",
+    demo: "https://shreyansh.dev/research"
   },
   {
-    name: "Technoxian Competition Robot",
-    type: "Robotics System",
-    problem:
-      "Build a robot that can survive competition pressure, mechanical stress, and strategy changes.",
-    solution:
-      "Designed hardware, embedded logic, and competition tactics as one coordinated system.",
-    outcome:
-      "Achieved Top 4 globally at Technoxian International Robotics Championship.",
-    stack: ["Arduino", "ESP32", "C++", "Mechanics"]
+    title: "Technoxian Competition Robot",
+    description:
+      "Competition robot built to survive mechanical stress, pressure, and strategy changes. Achieved Top 4 globally at Technoxian International Robotics Championship.",
+    tech: ["Arduino", "ESP32", "C++", "Mechanics"],
+    github: "https://github.com/Shreyansh11234"
   },
   {
-    name: "State-Level Exhibition Robot",
-    type: "Innovation Prototype",
-    problem:
-      "Create an original robot that stands out in both mechanics and live performance.",
-    solution:
-      "Built from scratch with original structure, control logic, and event-ready presentation.",
-    outcome:
-      "Won 3rd place at the state level.",
-    stack: ["Embedded Systems", "CAD", "Electronics", "C++"]
+    title: "State-Level Exhibition Robot",
+    description:
+      "Original robot built from scratch with mechanical design and embedded control logic. Won 3rd place at the state-level robotics exhibition.",
+    tech: ["Embedded Systems", "CAD", "Electronics", "C++"],
+    github: "https://github.com/Shreyansh11234"
   },
   {
-    name: "Premium Portfolio Platform",
-    type: "Web Experience",
-    problem:
-      "Most student portfolios feel generic and fail to communicate depth.",
-    solution:
-      "A cinematic, research-grade web identity with strong storytelling, motion, and premium UI.",
-    outcome:
-      "Transforms achievements into a brand that feels world-class.",
-    stack: ["Next.js", "Tailwind", "Framer Motion", "Three.js"]
+    title: "Premium Portfolio Platform",
+    description:
+      "Cinematic, research-grade web identity with strong storytelling, motion design, and premium UI. Built with modern full-stack tooling.",
+    tech: ["Next.js", "Tailwind", "Framer Motion", "Three.js"],
+    github: "https://github.com/Shreyansh11234",
+    demo: "https://shreyansh.dev"
+  },
+  {
+    title: "AI & Automation Workflows",
+    description:
+      "Explored AI-driven workflows for documentation, automation, and intelligent tooling integration across projects.",
+    tech: ["Python", "TypeScript", "AI APIs", "Automation"],
+    github: "https://github.com/Shreyansh11234"
+  },
+  {
+    title: "INSPIRE MANAK Innovation",
+    description:
+      "Nationally recognized innovation project developed under the INSPIRE Awards MANAK program, showcasing scientific thinking and originality.",
+    tech: ["Innovation", "Prototyping", "Scientific Method"],
+    github: "https://github.com/Shreyansh11234"
   }
 ];

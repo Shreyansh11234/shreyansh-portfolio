@@ -5,6 +5,7 @@ import { Menu, Command } from "lucide-react";
 import { useState } from "react";
 import { site } from "@/lib/site";
 import { Button } from "@/components/ui/button";
+
 export function SiteHeader({
   onOpenPalette
 }: {
@@ -13,21 +14,21 @@ export function SiteHeader({
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/6 bg-black/45 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-[#4fd1ff]/8 bg-[#05070d]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="#home" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.06] text-sm font-semibold text-white shadow-glow">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#4fd1ff]/20 bg-[#4fd1ff]/10 text-sm font-semibold text-[#4fd1ff] shadow-[0_0_12px_rgba(79,209,255,0.15)]">
             S
           </span>
           <div>
             <p className="text-sm font-medium text-white">{site.shortName}</p>
-            <p className="text-xs text-white/45">Robotics • Research • Cosmos</p>
+            <p className="text-xs text-[#4fd1ff]/50 font-mono tracking-[0.1em]">Robotics • Research • Cosmos</p>
           </div>
         </Link>
 
         <nav className="hidden items-center gap-6 xl:flex">
           {site.nav.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm text-white/65 transition hover:text-white">
+            <a key={item.href} href={item.href} className="text-sm text-white/65 transition hover:text-[#4fd1ff]/80">
               {item.label}
             </a>
           ))}
@@ -45,14 +46,14 @@ export function SiteHeader({
       </div>
 
       {open ? (
-        <div className="border-t border-white/8 px-4 py-4 sm:px-6 xl:hidden">
+        <div className="border-t border-[#4fd1ff]/8 px-4 py-4 sm:px-6 xl:hidden">
           <div className="grid grid-cols-2 gap-3">
             {site.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/70"
+                className="rounded-2xl border border-[#4fd1ff]/10 bg-[#4fd1ff]/5 px-4 py-3 text-sm text-white/70 transition hover:bg-[#4fd1ff]/10"
               >
                 {item.label}
               </a>

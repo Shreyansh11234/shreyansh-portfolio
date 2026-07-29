@@ -25,7 +25,7 @@ export function CosmicCodeScene() {
   const orbitRotate = useSpring(useMotionValue(0), { stiffness: 80, damping: 26 });
 
   return (
-    <div className="relative min-h-[540px] overflow-visible lg:min-h-[680px]">
+    <div className="relative min-h-[540px] overflow-visible lg:min-h-[680px] cosmic-scene-mobile">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_58%_44%,rgba(255,165,80,0.22),transparent_34%),radial-gradient(circle_at_76%_24%,rgba(108,166,255,0.18),transparent_34%),radial-gradient(circle_at_44%_62%,rgba(255,255,255,0.06),transparent_48%)] opacity-90" />
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:44px_44px] opacity-45 [mask-image:radial-gradient(circle_at_50%_48%,black,transparent_76%)]" />

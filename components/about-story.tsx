@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
@@ -22,7 +24,9 @@ export function AboutStory() {
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <Badge className="mb-4">Story</Badge>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">A documentary-style introduction.</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            A documentary-style introduction.<span className="terminal-cursor" />
+          </h2>
           <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65">
             I am not trying to look like a generic developer. This portfolio is built to show a rare mix of robotics,
             original research, software engineering, and a real obsession with the universe.
@@ -37,9 +41,9 @@ export function AboutStory() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ delay: i * 0.08 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl"
+              className="rounded-3xl border border-white/8 bg-white/[0.03] p-5 backdrop-blur-xl hud-corner"
             >
-              <p className="text-xs uppercase tracking-[0.4em] text-white/35">{m.year}</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-[#4fd1ff]/60">{m.year}</p>
               <p className="mt-3 text-base leading-7 text-white/75">{m.text}</p>
             </motion.div>
           ))}

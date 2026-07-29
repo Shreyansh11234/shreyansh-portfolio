@@ -37,9 +37,9 @@ export function TypingHeadline() {
   }, [text, deleting, index]);
 
   return (
-    <span className="block bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+    <span>
       {text}
-      <span className="ml-1 inline-block h-[1em] w-[2px] translate-y-1 bg-white/75" />
+      <span className="ml-1 inline-block h-[1em] w-[2px] translate-y-1 bg-[#4fd1ff] animate-blink" />
     </span>
   );
 }
