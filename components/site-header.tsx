@@ -17,9 +17,9 @@ export function SiteHeader({
     <header className="sticky top-0 z-40 border-b border-[#ffa040]/8 bg-[#050302]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="#home" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ffa040]/20 bg-[#ffa040]/10 text-sm font-semibold text-[#ffa040] shadow-[0_0_12px_rgba(255,160,60,0.15)]">
-            S
-          </span>
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#050302] p-1 shadow-[0_0_12px_rgba(255,160,60,0.2)]">
+            <img src="/images/logo.png" alt="Logo" className="h-full w-full object-contain" />
+          </div>
           <div>
             <p className="text-sm font-medium text-white">{site.shortName}</p>
             <p className="text-xs text-[#ffa040]/50 font-mono tracking-[0.1em]">Robotics • Research • Cosmos</p>

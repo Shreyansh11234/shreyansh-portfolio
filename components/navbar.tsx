@@ -45,8 +45,8 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
           )}
         >
           <Link href="#home" className="group flex items-center gap-2.5" data-cursor="link">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-cyan/20 bg-cyan/8 font-mono text-xs font-semibold text-cyan">
-              S
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ffa040]/20 bg-[#050302]/80 overflow-hidden">
+              <img src="/images/logo.png" alt="S" className="h-full w-full object-contain p-0.5" />
             </span>
             <span className="hidden font-space text-sm font-medium text-white sm:block">{site.shortName}</span>
           </Link>

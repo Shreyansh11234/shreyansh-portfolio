@@ -37,8 +37,12 @@ export function ETHResearch() {
           </div>
         </div>
 
-        <Card className="relative overflow-hidden">
-          <CardContent className="p-6">
+        <Card className="relative overflow-hidden border-white/10">
+          <div className="absolute inset-0">
+            <img src="/images/spacetime_bg.jpg" alt="Spacetime warp" className="h-full w-full object-cover opacity-70 brightness-110" style={{ filter: "brightness(1.2) contrast(1.1)" }} />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050302] via-[#050302]/40 to-transparent" />
+          </div>
+          <CardContent className="relative p-6 z-10">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.4em] text-[#ffa040]/50 font-mono">Research Lab</p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useMemo, useState, Suspense, useCallback } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { skillGroups } from "@/data/skills";
 import { Badge } from "@/components/ui/badge";
@@ -72,6 +72,15 @@ function ConstellationMesh({
     return new Float32Array(positions);
   }, [nodes]);
 
+  const textures = useLoader(THREE.TextureLoader, [
+    "/images/skills/skill_1.png",
+    "/images/skills/skill_2.png",
+    "/images/skills/skill_3.png",
+    "/images/skills/skill_4.png",
+    "/images/skills/skill_5.png",
+    "/images/skills/skill_6.png",
+  ]);
+
   useFrame((state) => {
     if (group.current) {
       group.current.rotation.y = state.clock.elapsedTime * 0.08 + scrollProgress * 0.5;
@@ -91,26 +100,24 @@ function ConstellationMesh({
           opacity={hovered ? 0.25 : 0.1}
         />
       </lineSegments>
-      {nodes.map((node) => {
+      {nodes.map((node, index) => {
         const isHovered = hovered === node.id;
-        const isConnected = hovered !== null;
+        const texture = textures[index % textures.length];
         return (
-          <mesh
+          <sprite
             key={node.id}
             position={node.position}
             onPointerOver={() => onHover(node.id)}
             onPointerOut={() => onHover(null)}
-            scale={isHovered ? 1.8 : 1}
+            scale={isHovered ? [1.5, 1.5, 1.5] : [0.8, 0.8, 0.8]}
           >
-            <sphereGeometry args={[0.18, 16, 16]} />
-            <meshStandardMaterial
+            <spriteMaterial
+              map={texture}
               color={node.color}
-              emissive={node.color}
-              emissiveIntensity={isHovered ? 2 : isConnected ? 0.5 : 0.8}
               transparent
-              opacity={hovered && !isHovered ? 0.4 : 1}
+              opacity={hovered && !isHovered ? 0.2 : 0.9}
             />
-          </mesh>
+          </sprite>
         );
       })}
     </group>
@@ -152,7 +159,11 @@ export function SkillsConstellation() {
   }, []);
 
   return (
-    <section id="skills" className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <section id="skills" className="relative overflow-hidden mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <img src="/images/circuit_bg.png" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-[0.07]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050302]/80 via-transparent to-[#050302]/80" />
+      </div>
       <div className="mb-2 font-mono text-[11px] uppercase tracking-[0.3em] text-cyan/50">
         System · Skill Matrix
       </div>

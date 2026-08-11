@@ -89,7 +89,11 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
+    <section id="contact" className="relative overflow-hidden mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <img src="/images/circuit_bg.png" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-[0.07]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050302]/80 via-transparent to-[#050302]/80" />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}

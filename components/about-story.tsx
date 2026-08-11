@@ -26,7 +26,11 @@ const milestones = [
 
 export function AboutStory() {
   return (
-    <section id="about" className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <section id="about" className="relative overflow-hidden mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <img src="/images/circuit_bg.png" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-[0.07]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050302]/80 via-transparent to-[#050302]/80" />
+      </div>
       <NeuralNetworkScene className="absolute inset-0 -z-10 opacity-40" />
 
       <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
