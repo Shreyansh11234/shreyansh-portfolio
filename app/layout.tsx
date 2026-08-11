@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
-import { StarfieldBackground } from "@/components/starfield-background";
+import { CosmicBackground } from "@/components/cosmic-background";
 import { site } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${space.variable} ${mono.variable} font-sans antialiased`}>
         <Providers>
-          <StarfieldBackground />
+          <CosmicBackground />
           {children}
         </Providers>
       </body>

@@ -41,7 +41,7 @@ export function ETHResearch() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-[#4fd1ff]/50 font-mono">Research Lab</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-[#ffa040]/50 font-mono">Research Lab</p>
                 <h3 className="mt-2 text-2xl font-semibold text-white">ETH Progress Map</h3>
               </div>
               <Clock className="h-5 w-5 text-[#ffb454]" />
@@ -56,7 +56,7 @@ export function ETHResearch() {
                 ["Peer Review Prep", "Future stage"]
               ].map(([a, b], index) => (
                 <div key={a} className="flex items-center gap-4">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#4fd1ff]/10 bg-[#4fd1ff]/8 text-sm text-[#4fd1ff]/70">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ffa040]/10 bg-[#ffa040]/8 text-sm text-[#ffa040]/70">
                     {index + 1}
                   </div>
                   <div className="flex-1 rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3">
@@ -67,7 +67,7 @@ export function ETHResearch() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-3xl border border-dashed border-[#4fd1ff]/10 bg-white/[0.02] p-5">
+            <div className="mt-6 rounded-3xl border border-dashed border-[#ffa040]/10 bg-white/[0.02] p-5">
               <p className="text-sm font-medium text-white">Research notes</p>
               <p className="mt-2 text-sm leading-7 text-white/60">
                 Keep a written record of observations, equations, diagrams, open questions, and revisions.

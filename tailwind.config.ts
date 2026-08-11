@@ -22,16 +22,16 @@ const config: Config = {
           glow: "#ff8a3c"
         },
         cyan: {
-          DEFAULT: "#4fd1ff",
-          dim: "#2a7a99",
-          glow: "#7adaff"
+          DEFAULT: "#ffa040",
+          dim: "#99601a",
+          glow: "#ffb86c"
         },
-        teal: "#6ee7c9",
-        purple: "#b79bff",
+        teal: "#e7c96e",
+        purple: "#c97a8b",
         coral: "#ff8a7a",
         amber: "#ffb454",
-        "space-navy": "#05070d",
-        "space-dark": "#0d1b2e",
+        "space-navy": "#0d0502",
+        "space-dark": "#1b0d02",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
@@ -39,18 +39,18 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"]
       },
       boxShadow: {
-        glow: "0 0 0 1px hsl(var(--line)), 0 10px 40px rgba(0,0,0,.35), 0 0 60px rgba(79,209,255,.08)",
+        glow: "0 0 0 1px hsl(var(--line)), 0 10px 40px rgba(0,0,0,.35), 0 0 60px rgba(255,160,60,.08)",
         soft: "0 12px 40px rgba(0,0,0,.28)",
-        "glow-cyan": "0 0 20px rgba(79,209,255,.12), 0 0 40px rgba(79,209,255,.06)",
-        "glow-amber": "0 0 20px rgba(255,180,84,.12), 0 0 40px rgba(255,180,84,.06)"
+        "glow-cyan": "0 0 20px rgba(255,160,60,.12), 0 0 40px rgba(255,160,60,.06)",
+        "glow-amber": "0 0 20px rgba(255,140,50,.12), 0 0 40px rgba(255,140,50,.06)"
       },
       backgroundImage: {
         aurora:
-          "radial-gradient(circle at 20% 20%, rgba(79,209,255,0.12), transparent 30%), radial-gradient(circle at 80% 30%, rgba(255,180,84,0.08), transparent 28%)",
+          "radial-gradient(circle at 20% 20%, rgba(255,140,50,0.12), transparent 30%), radial-gradient(circle at 80% 30%, rgba(180,60,100,0.08), transparent 28%)",
         stars:
           "radial-gradient(circle at 20% 30%, rgba(255,255,255,.9) 0 1px, transparent 1px), radial-gradient(circle at 70% 20%, rgba(255,255,255,.7) 0 1px, transparent 1px), radial-gradient(circle at 10% 80%, rgba(255,255,255,.8) 0 1px, transparent 1px)",
         "neural-grid":
-          "linear-gradient(to right, rgba(79,209,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(79,209,255,0.03) 1px, transparent 1px)"
+          "linear-gradient(to right, rgba(255,160,60,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,160,60,0.03) 1px, transparent 1px)"
       },
       keyframes: {
         float: {
@@ -66,8 +66,8 @@ const config: Config = {
           "100%": { transform: "translateX(-50%)" }
         },
         "pulse-cyan": {
-          "0%,100%": { boxShadow: "0 0 8px rgba(79,209,255,0.15)" },
-          "50%": { boxShadow: "0 0 20px rgba(79,209,255,0.3)" }
+          "0%,100%": { boxShadow: "0 0 8px rgba(255,160,60,0.15)" },
+          "50%": { boxShadow: "0 0 20px rgba(255,160,60,0.3)" }
         },
         blink: {
           "50%": { opacity: "0" }

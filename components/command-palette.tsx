@@ -39,10 +39,10 @@ export function CommandPalette({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#05070d]/80 backdrop-blur-sm">
-      <div className="mx-auto mt-24 w-[min(92vw,680px)] rounded-3xl border border-[#4fd1ff]/15 bg-[#050d1a] p-4 shadow-[0_0_40px_rgba(79,209,255,0.06)]">
-        <div className="flex items-center gap-3 rounded-2xl border border-[#4fd1ff]/10 bg-[#4fd1ff]/5 px-4 py-3">
-          <Search className="h-4 w-4 text-[#4fd1ff]/60" />
+    <div className="fixed inset-0 z-50 bg-[#050302]/80 backdrop-blur-sm">
+      <div className="mx-auto mt-24 w-[min(92vw,680px)] rounded-3xl border border-[#ffa040]/15 bg-[#0a0503] p-4 shadow-[0_0_40px_rgba(255,160,60,0.06)]">
+        <div className="flex items-center gap-3 rounded-2xl border border-[#ffa040]/10 bg-[#ffa040]/5 px-4 py-3">
+          <Search className="h-4 w-4 text-[#ffa040]/60" />
           <input
             autoFocus
             value={query}
@@ -50,7 +50,7 @@ export function CommandPalette({
             placeholder="Search sections or type a command..."
             className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/30"
           />
-          <button onClick={onClose} className="rounded-full p-1 text-white/45 hover:bg-white/8 hover:text-[#4fd1ff] transition">
+          <button onClick={onClose} className="rounded-full p-1 text-white/45 hover:bg-white/8 hover:text-[#ffa040] transition">
             <X className="h-4 w-4" />
           </button>
         </div>
@@ -63,13 +63,13 @@ export function CommandPalette({
                 key={command.label}
                 href={command.href}
                 onClick={onClose}
-                className="flex items-center justify-between rounded-2xl border border-[#4fd1ff]/8 bg-[#4fd1ff]/3 px-4 py-3 text-sm text-white/75 transition hover:bg-[#4fd1ff]/8"
+                className="flex items-center justify-between rounded-2xl border border-[#ffa040]/8 bg-[#ffa040]/3 px-4 py-3 text-sm text-white/75 transition hover:bg-[#ffa040]/8"
               >
                 <span className="flex items-center gap-3">
-                  <Icon className="h-4 w-4 text-[#4fd1ff]/60" />
+                  <Icon className="h-4 w-4 text-[#ffa040]/60" />
                   {command.label}
                 </span>
-                <span className="text-xs font-mono text-[#4fd1ff]/30">{command.href}</span>
+                <span className="text-xs font-mono text-[#ffa040]/30">{command.href}</span>
               </a>
             );
           })}

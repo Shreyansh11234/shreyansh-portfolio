@@ -44,8 +44,8 @@ type Status = "idle" | "loading" | "success" | "error";
     0: "bg-white/[0.04] border-white/6",
     1: "bg-[#1a3a5c] border-[#1a3a5c]/60",
     2: "bg-[#2a7a99] border-[#2a7a99]/60",
-    3: "bg-[#4fd1ff] border-[#4fd1ff]/60",
-    4: "bg-[#7adaff] border-[#7adaff]/60",
+    3: "bg-[#ffa040] border-[#ffa040]/60",
+    4: "bg-[#ffb86c] border-[#ffb86c]/60",
   };
 
 let cache: { user: GitHubUser; repos: Repo[] } | null = null;

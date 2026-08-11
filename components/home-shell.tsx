@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SiteHeader } from "@/components/site-header";
+import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { AboutStory } from "@/components/about-story";
 import { AchievementsTimeline } from "@/components/achievements-timeline";
@@ -9,7 +9,7 @@ import { BeyondEngineering } from "@/components/beyond-engineering";
 import { ETHResearch } from "@/components/eth-research";
 import { RoboticsShowcase } from "@/components/robotics-showcase";
 import { ProjectsSection } from "@/components/projects-section";
-import { SkillsGrid } from "@/components/skills-grid";
+import { SkillsConstellation } from "@/components/skills-constellation";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { GitHubShowcase } from "@/components/github-showcase";
 import { ContactSection } from "@/components/contact-section";
@@ -38,8 +38,8 @@ export function HomeShell() {
   }, []);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-transparent text-white">
-      <SiteHeader onOpenPalette={() => setPaletteOpen(true)} />
+    <main className="relative min-h-screen overflow-x-hidden bg-transparent text-white">
+      <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <Hero />
       <SectionWarp><AboutStory /></SectionWarp>
       <SectionWarp><AchievementsTimeline /></SectionWarp>
@@ -47,7 +47,7 @@ export function HomeShell() {
       <SectionWarp><ETHResearch /></SectionWarp>
       <SectionWarp><RoboticsShowcase /></SectionWarp>
       <SectionWarp><ProjectsSection /></SectionWarp>
-      <SectionWarp><SkillsGrid /></SectionWarp>
+      <SectionWarp><SkillsConstellation /></SectionWarp>
       <SectionWarp><ExperienceTimeline /></SectionWarp>
       <SectionWarp><GitHubShowcase /></SectionWarp>
       <SectionWarp><ContactSection /></SectionWarp>

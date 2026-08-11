@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { Badge } from "@/components/ui/badge";
+
+const NeuralNetworkScene = dynamic(
+  () => import("@/components/neural-network-scene").then((m) => m.NeuralNetworkScene),
+  { ssr: false }
+);
 
 const milestones = [
   {
@@ -20,16 +26,31 @@ const milestones = [
 
 export function AboutStory() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <Badge className="mb-4">Story</Badge>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            A documentary-style introduction.<span className="terminal-cursor" />
+    <section id="about" className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      <NeuralNetworkScene className="absolute inset-0 -z-10 opacity-40" />
+
+      <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
+        <div className="glass-panel rounded-3xl p-8">
+          <div className="mb-6 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-cyan/50">
+            <span>System</span>
+            <span className="text-white/20">·</span>
+            <span>Profile</span>
+            <span className="ml-auto flex items-center gap-1.5 text-emerald-400/80">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Active
+            </span>
+          </div>
+
+          <Badge className="mb-4">About</Badge>
+          <h2 className="font-space text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl">
+            Neural Profile
           </h2>
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65">
+          <p className="mt-5 max-w-xl text-sm leading-7 text-white/60">
             I am not trying to look like a generic developer. This portfolio is built to show a rare mix of robotics,
             original research, software engineering, and a real obsession with the universe.
+          </p>
+          <p className="mt-4 font-mono text-xs text-white/35">
+            {">"} Class XI Student · JEE Aspirant · India
           </p>
         </div>
 
@@ -37,14 +58,15 @@ export function AboutStory() {
           {milestones.map((m, i) => (
             <motion.div
               key={m.year}
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ delay: i * 0.08 }}
-              className="rounded-3xl border border-white/8 bg-white/[0.03] p-5 backdrop-blur-xl hud-corner"
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -4, scale: 1.01 }}
+              className="glass-panel rounded-2xl p-5 hover:border-cyan/30 hover:bg-white/[0.04] transition-all duration-300 cursor-pointer"
             >
-              <p className="text-xs uppercase tracking-[0.4em] text-[#4fd1ff]/60">{m.year}</p>
-              <p className="mt-3 text-base leading-7 text-white/75">{m.text}</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan/50">{m.year}</p>
+              <p className="mt-3 text-sm leading-7 text-white/70">{m.text}</p>
             </motion.div>
           ))}
         </div>

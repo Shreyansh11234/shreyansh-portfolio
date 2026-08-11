@@ -13,7 +13,7 @@ export function SkillsGrid() {
         {skillGroups.map((group) => (
           <Card key={group.label}>
             <CardContent className="p-5">
-              <p className="text-xs uppercase tracking-[0.35em] text-[#4fd1ff]/60 font-mono">{group.label}</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-[#ffa040]/60 font-mono">{group.label}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <Badge key={item} className="border-white/12 bg-white/[0.04] text-white/75">

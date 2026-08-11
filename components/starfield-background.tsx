@@ -51,7 +51,7 @@ function Stars({ mouse, count }: { mouse: React.MutableRefObject<{ x: number; y:
         size={0.35}
         transparent
         opacity={0.6}
-        color="#c8d8ff"
+        color="#ffe6d8"
         sizeAttenuation
         blending={THREE.AdditiveBlending}
         depthWrite={false}
@@ -97,7 +97,7 @@ function NeuralLinks({ visible }: { visible: boolean }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[allPos, 3]} />
       </bufferGeometry>
-      <lineBasicMaterial color="#4fd1ff" transparent opacity={0.04} />
+      <lineBasicMaterial color="#ffa040" transparent opacity={0.04} />
     </lineSegments>
   );
 }
@@ -146,7 +146,7 @@ export function StarfieldBackground() {
     <div
       className="fixed inset-0 z-0 pointer-events-none"
       aria-hidden="true"
-      style={{ background: "radial-gradient(ellipse at 50% 50%, #0a1220 0%, #05070d 100%)" }}
+      style={{ background: "radial-gradient(ellipse at 50% 50%, #130906 0%, #050302 100%)" }}
     >
       <StarfieldCanvas mode={mode} mouse={mouse} />
     </div>

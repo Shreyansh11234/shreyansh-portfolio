@@ -34,9 +34,9 @@ export function LoadingScreen() {
   if (ready) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] flex flex-col items-center justify-center bg-[#05070d]">
+    <div className="fixed inset-0 z-[70] flex flex-col items-center justify-center bg-[#050302]">
       <div className="relative">
-        <div className="h-16 w-16 animate-spin rounded-full border-2 border-cyan-400/20 border-t-cyan-400" />
+        <div className="h-16 w-16 animate-spin rounded-full border-2 border-amber-400/20 border-t-amber-400" />
         <div className="absolute inset-0 h-16 w-16 animate-spin rounded-full border-2 border-amber-400/10 border-b-amber-400" style={{ animationDirection: "reverse", animationDuration: "1.5s" }} />
       </div>
       <div className="mt-8 space-y-2 text-center">
@@ -44,12 +44,12 @@ export function LoadingScreen() {
           <p
             key={s}
             className={`font-mono text-xs tracking-[0.15em] transition-opacity duration-300 ${
-              i === step ? "text-cyan-300/90" : "text-white/20"
+              i === step ? "text-amber-300/90" : "text-white/20"
             }`}
           >
-            {i === step && <span className="mr-2 text-cyan-400">&gt;</span>}
+            {i === step && <span className="mr-2 text-amber-400">&gt;</span>}
             {s}
-            {i === step && <span className="ml-1 inline-block h-3 w-[2px] bg-cyan-400 animate-blink" />}
+            {i === step && <span className="ml-1 inline-block h-3 w-[2px] bg-amber-400 animate-blink" />}
           </p>
         ))}
       </div>

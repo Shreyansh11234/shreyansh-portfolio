@@ -39,7 +39,7 @@ export function TypingHeadline() {
   return (
     <span>
       {text}
-      <span className="ml-1 inline-block h-[1em] w-[2px] translate-y-1 bg-[#4fd1ff] animate-blink" />
+      <span className="ml-1 inline-block h-[1em] w-[2px] translate-y-1 bg-[#ffa040] animate-blink" />
     </span>
   );
 }
